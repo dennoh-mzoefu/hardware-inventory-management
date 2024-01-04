@@ -101,9 +101,10 @@ function TodaySales() {
             },
             title: {
                 display: true,
-                text: 'Past Week Sales',
+                text: "Today's sales",
                 font: {
-                    size: 25
+                    size: 25,
+                    color: 'black'
                 }
             },
         },
