@@ -43,7 +43,7 @@ function OrderSectionItem({ orderItem, setOrderItem, items }) {
     useEffect(() => {
         setOrderItem((prevArray) =>
             prevArray.map((item) =>
-                item.id === orderItem.id ? { ...item, total: item.quantityToggled * orderItem.sellingPrice } : item
+                item.id === orderItem.id ? { ...item, profit: item.quantityToggled * (orderItem.sellingPrice - orderItem.buyingPrice), total: item.quantityToggled * orderItem.sellingPrice } : item
             )
         );
         // setTotal(quantity * orderItem.sellingPrice)
