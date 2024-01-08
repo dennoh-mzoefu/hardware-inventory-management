@@ -1,4 +1,4 @@
-import { onSnapshot } from "firebase/firestore";
+import { onSnapshot, orderBy, query } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { fetchStock } from "./redux/stockSlice";
 import { useDispatch } from "react-redux";
@@ -26,8 +26,10 @@ function PreApp() {
         });
         return () => unSubscribe();
     }, []);
+
+    const q = query(salesColRef, orderBy('createdAt'))
     useEffect(() => {
-        const unSubscribe = onSnapshot(salesColRef, (snapshot) => {
+        const unSubscribe = onSnapshot(q, (snapshot) => {
             setSale(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
         });
         return () => unSubscribe();
