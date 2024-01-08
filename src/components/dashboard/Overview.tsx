@@ -96,12 +96,12 @@ function Overview() {
             {
                 label: "Sales",
                 data: groupedObjects.map(x => x.data),
-                backgroundColor: "rgba(255,119,3,1)"
+                backgroundColor: "rgba(3, 165, 252)"
             },
             {
                 label: "Profit",
                 data: groupedObjects.map(x => x.data),
-                backgroundColor: "rgba(255,40,3,1)"
+                backgroundColor: "rgba(161, 200, 237)"
             }
         ],
     };
